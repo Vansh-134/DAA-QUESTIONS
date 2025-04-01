@@ -1,0 +1,17 @@
+public class SecondLargestElement {
+    public static void main(String[] args) {
+        int[] arr = {10, 45, 76, 89, 34, 67, 99, 23}; 
+        int largest = Integer.MIN_VALUE, secondLargest = Integer.MIN_VALUE;
+
+        for (int num : arr) {
+            if (num > largest) {
+                secondLargest = largest;
+                largest = num;
+            } else if (num > secondLargest && num != largest) {
+                secondLargest = num;
+            }
+        }
+
+        System.out.println("Second largest element in the array: " + secondLargest);
+    }
+}
